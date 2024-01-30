@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useState, useEffect } from 'react';
+
+import { useState } from "react";
+
+
 
 
 const Header = () => {
@@ -176,11 +181,8 @@ const resList = [
             cloudinaryImageId: 'xqwpuhgnsaf18te7zvtv',
             cuisines: [
                 'Biryani',
-                'Andhra',
-                'South Indian',
-                'North Indian',
-                'Chinese',
-                'Seafood',
+                'Andhra'
+
             ],
             tags: [],
             costForTwo: 50000,
@@ -412,7 +414,7 @@ const resList = [
             area: 'Koramangala',
             totalRatingsString: '10000+ ratings',
             cloudinaryImageId: 'cd832b6167eb9f88aeb1ccdebf38d942',
-            cuisines: ['American', 'Continental', 'Desserts', 'Italian'],
+            cuisines: ['American', 'Continental'],
             tags: [],
             costForTwo: 45000,
             costForTwoString: '₹450 FOR TWO',
@@ -553,7 +555,7 @@ const resList = [
             area: 'Koramangala',
             totalRatingsString: '10000+ ratings',
             cloudinaryImageId: 'un4omn7rcunkmlw6vikr',
-            cuisines: ['North Indian', 'Kebabs', 'Biryani'],
+            cuisines: ['North Indian'],
             tags: [],
             costForTwo: 45000,
             costForTwoString: '₹450 FOR TWO',
@@ -689,7 +691,7 @@ const resList = [
             area: 'HSR Layout',
             totalRatingsString: '10000+ ratings',
             cloudinaryImageId: 'n15vckntsiboiod3gpco',
-            cuisines: ['Indian', 'South Indian', 'Beverages'],
+            cuisines: ['Indian'],
             tags: [],
             costForTwo: 20000,
             costForTwoString: '₹200 FOR TWO',
@@ -832,10 +834,6 @@ const resList = [
             cloudinaryImageId: 'rxsvhvcdip9dbfdijzk9',
             cuisines: [
                 'American',
-                'Arabian',
-                'Chinese',
-                'Desserts',
-                'Mughlai',
                 'North Indian',
             ],
             tags: [],
@@ -934,11 +932,6 @@ const resList = [
             cloudinaryImageId: 'ptetuqkrhmpd8tiqiztg',
             cuisines: [
                 'North Indian',
-                'Home Food',
-                'Thalis',
-                'Chinese',
-                'Punjabi',
-                'South Indian',
                 'Ice Cream',
             ],
             tags: [],
@@ -1075,7 +1068,7 @@ const resList = [
             area: 'Koramangala',
             totalRatingsString: '1000+ ratings',
             cloudinaryImageId: 'z2ahvclpmdv6lekyth39',
-            cuisines: ['North Indian', 'South Indian'],
+            cuisines: ['North Indian'],
             tags: [],
             costForTwo: 30000,
             costForTwoString: '₹300 FOR TWO',
@@ -1216,7 +1209,7 @@ const resList = [
             area: 'BTM Layout',
             totalRatingsString: '5000+ ratings',
             cloudinaryImageId: 'a27weqanhnszqiuzsoik',
-            cuisines: ['Kerala', 'Biryani', 'Beverages'],
+            cuisines: ['Kerala'],
             tags: [],
             costForTwo: 20000,
             costForTwoString: '₹200 FOR TWO',
@@ -1510,14 +1503,7 @@ const resList = [
             cloudinaryImageId: 'c5howge9hbdor7uqf949',
             cuisines: [
                 'Biryani',
-                'Hyderabadi',
-                'Andhra',
-                'North Indian',
-                'South Indian',
-                'Chinese',
-                'Tandoor',
-                'Seafood',
-                'Beverages',
+                'Beverages'
             ],
             tags: [],
             costForTwo: 30000,
@@ -1648,13 +1634,13 @@ const resList = [
         data: {
             type: 'F',
             id: '642459',
-            name: 'Malnad Donne Biryani MDB',
+            name: 'Malnad Don MDB',
             uuid: '4ae022a0-9296-40ac-8ea9-3e764200e6a5',
             city: '1',
             area: 'Jayanagar',
             totalRatingsString: '50+ ratings',
             cloudinaryImageId: 'tjw67zgzfehxgfo1vio2',
-            cuisines: ['Biryani', 'South Indian', 'Kebabs'],
+            cuisines: [ 'South Indian'],
             tags: [],
             costForTwo: 25000,
             costForTwoString: '₹250 FOR TWO',
@@ -1790,7 +1776,7 @@ const resList = [
             area: 'Btm Layout',
             totalRatingsString: '10000+ ratings',
             cloudinaryImageId: 'm0bjo1ds8l6o4civx6ek',
-            cuisines: ['Bihari', 'North Indian', 'Desserts'],
+            cuisines: ['Bihari'],
             tags: [],
             costForTwo: 25000,
             costForTwoString: '₹250 FOR TWO',
@@ -1933,11 +1919,7 @@ const resList = [
             cloudinaryImageId: 'dbfp4mqtidbjh9sectlk',
             cuisines: [
                 'Beverages',
-                'Biryani',
-                'Chinese',
-                'Desserts',
-                'North Indian',
-                'South Indian',
+                'Biryani'
             ],
             tags: [],
             costForTwo: 15000,
@@ -2065,10 +2047,10 @@ const resList = [
     },
 ];
 
+
 const ResturantCard = (props) => {
     const { resData } = props;
-    console.log(resData);
-
+  
     const { cloudinaryImageId,
         name,
         cuisines,
@@ -2078,18 +2060,21 @@ const ResturantCard = (props) => {
 
     return (
         <div className="col-md-2 mt-5    ">
-            <div className="card shadow-lg">
-                <img className=" "
-                    height={170} width={201} src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Ultima_Connect.jpg?v=1687865888"
+            <div className="card shadow-lg m-1 rounded-3">
+                <img className="img-fluid "
+                    height={160} width={200} src={
+                        'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/' +
+                        cloudinaryImageId
+                    }
                     alt="" />
                 <div className="card-body">
-                    <p className="text-muted">Boat</p>
-                    <p>Smart Watches</p>
+                    <p className="text-muted">{name}  </p>
+                    <p>{cuisines} </p>
                     <p className="">
-                        <i className="fa-solid fa-star text-warning"></i> 4.0 Stars &
-                        <i className="fa-solid fa-user"></i> 4345 Reviews
+                        <i className="fa-solid fa-star text-warning"></i>{avgRating}
+                        <i className="fa-solid fa-user"></i> {costForTwo}
                     </p>
-                    <p>₹4999</p>
+                    <p>{deliveryTime} </p>
                 </div>
             </div>
         </div>
@@ -2098,14 +2083,27 @@ const ResturantCard = (props) => {
     );
 };
 
+
 const Body = () => {
+
+    const [searchTerm, setSearchTerm] = useState('');
+    const [filteredResList, setFilteredResList] = useState(resList);
+
+    useEffect(() => {
+        setFilteredResList(
+            resList.filter(restaurant =>
+                restaurant.data.name.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+        );
+    }, [searchTerm]);
     return (
         <div>
-            <div>
-                <input type="text" placeholder="Search " />
+            <div className=" mt-5">
+                <input type="text" placeholder='Search Items' className='form-control w-75  m-auto'  onChange={event => setSearchTerm(event.target.value)}
+               />
             </div>
-            <div className="d-flex  flex-wrap  ">
-                {resList.map((restaurant) => (
+            <div className="d-flex flex-wrap mx-3">
+                {filteredResList.map((restaurant) => (
                     <ResturantCard key={restaurant.data.id} resData={restaurant} />
                 ))}
             </div>
@@ -2117,11 +2115,10 @@ const currYear = new Date().getFullYear();
 const Footer = () => {
     return (
         <footer>
-            <div className="container-fluid">
-                <div>
+            <div className="container-fluid border shadow-sm mt-5">
+                <div className="p-3">
                     <p>
                         Copyright &copy; {currYear} Made with 💗 by <strong>Adarsh</strong>
-
                     </p>
                 </div>
             </div>
