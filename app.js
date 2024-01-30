@@ -2069,18 +2069,25 @@ const ResturantCard = (props) => {
     const { resData } = props;
     console.log(resData);
 
+    const { cloudinaryImageId,
+        name,
+        cuisines,
+        avgRating,
+        costForTwo,
+        deliveryTime } = resData?.data;
+
     return (
-        <div class="col-md-2 mt-5    ">
-            <div class="card shadow-lg">
-                <img class=" "
+        <div className="col-md-2 mt-5    ">
+            <div className="card shadow-lg">
+                <img className=" "
                     height={170} width={201} src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Ultima_Connect.jpg?v=1687865888"
                     alt="" />
-                <div class="card-body">
-                    <p class="text-muted">Boat</p>
+                <div className="card-body">
+                    <p className="text-muted">Boat</p>
                     <p>Smart Watches</p>
-                    <p class="">
-                        <i class="fa-solid fa-star text-warning"></i> 4.0 Stars &
-                        <i class="fa-solid fa-user"></i> 4345 Reviews
+                    <p className="">
+                        <i className="fa-solid fa-star text-warning"></i> 4.0 Stars &
+                        <i className="fa-solid fa-user"></i> 4345 Reviews
                     </p>
                     <p>₹4999</p>
                 </div>
@@ -2098,11 +2105,9 @@ const Body = () => {
                 <input type="text" placeholder="Search " />
             </div>
             <div className="d-flex  flex-wrap  ">
-
-            {resList.map((restaurant) => (
-          <ResturantCard key={restaurant.data.id} resData={restaurant} />
-        ))}
-
+                {resList.map((restaurant) => (
+                    <ResturantCard key={restaurant.data.id} resData={restaurant} />
+                ))}
             </div>
         </div>
     )
@@ -2116,7 +2121,7 @@ const Footer = () => {
                 <div>
                     <p>
                         Copyright &copy; {currYear} Made with 💗 by <strong>Adarsh</strong>
-                       
+
                     </p>
                 </div>
             </div>
