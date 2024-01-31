@@ -14,8 +14,8 @@ const Footer = () => {
         // </footer>
         <footer className="bg-body-tertiary text-center mt-5 shadow-sm border  border-1">
             <div className="text-center p-3" >
-                Copyright &copy; {currYear} Made with 💗 by <strong>Adarsh</strong>
-                <a className="text-body" href="https://github.com/Adarsh01208">@Adarsh</a>
+                Copyright &copy; {currYear} Made with 💗 by <strong><a className="text-body" href="https://github.com/Adarsh01208"></a> @Adarsh</strong>
+
             </div>
         </footer>
     )

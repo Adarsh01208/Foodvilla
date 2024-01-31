@@ -5,4 +5,11 @@
 .card:hover  {
     transform: scale(1.05);
 }
+.list-group-item:hover{
+  color: orangered;
 
+}
+.list-group-item {
+font-size: small;
+font-family: sans-serif;
+}
