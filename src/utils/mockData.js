@@ -1,27 +1,30 @@
- const resList = [
+const resList = [
     {
         type: 'restaurant',
         data: {
-            type: 'F',
-            id: '121603',
-            name: 'Kannur Food Point',
-            uuid: '51983905-e698-4e31-b0d7-e376eca56320',
-            city: '1',
-            area: 'Tavarekere',
-            totalRatingsString: '10000+ ratings',
-            cloudinaryImageId: 'bmwn4n4bn6n1tcpc8x2h',
-            cuisines: ['Kerala', 'Chinese'],
-            tags: [],
-            costForTwo: 30000,
-            costForTwoString: '₹300 FOR TWO',
-            deliveryTime: 24,
-            minDeliveryTime: 24,
-            maxDeliveryTime: 24,
-            slaString: '24 MINS',
-            lastMileTravel: 3,
-            slugs: {
-                restaurant: 'kannur-food-point-btm',
-                city: 'bangalore',
+            "id": "78857",
+            "name": "Domino's Pizza",
+            "cloudinaryImageId": "wv3a6ninjnk8ufpvqb5s",
+            "locality": "Ashiyana",
+            "areaName": "Aashiana",
+            "costForTwoString": "₹400 for two",
+            "cuisines": [
+                "Pizzas",
+                "Italian",
+                "Pastas",
+                "Desserts"
+            ],
+            "avgRating": 4.3,
+            "parentId": "2456",
+            "avgRatingString": "4.3",
+            "totalRatingsString": "5K+",
+            "sla": {
+                "deliveryTime": 42,
+                "lastMileTravel": 7.1,
+                "serviceability": "SERVICEABLE",
+                "slaString": "40-45 mins",
+                "lastMileTravelString": "7.1 km",
+                "iconType": "ICON_TYPE_EMPTY"
             },
             cityState: '1',
             address:
@@ -140,33 +143,50 @@
         },
         subtype: 'basic',
     },
+   
+
     {
         type: 'restaurant',
         data: {
-            type: 'F',
-            id: '229',
-            name: 'Meghana Foods',
-            uuid: '4fdd19e2-5d0f-4bde-9c7f-dc3e8d36021f',
-            city: '1',
-            area: 'Koramangala',
-            totalRatingsString: '10000+ ratings',
-            cloudinaryImageId: 'xqwpuhgnsaf18te7zvtv',
-            cuisines: [
-                'Biryani',
-                'Andhra'
-
+            "id": "183383",
+            "name": "Burger King",
+            "cloudinaryImageId": "e33e1d3ba7d6b2bb0d45e1001b731fcf",
+            "locality": "Phoenix United Mall",
+            "areaName": "Lda Colony",
+            "costForTwo": "₹350 for two",
+            "cuisines": [
+                "Burgers",
+                "American"
             ],
-            tags: [],
-            costForTwo: 50000,
-            costForTwoString: '₹500 FOR TWO',
-            deliveryTime: 16,
-            minDeliveryTime: 16,
-            maxDeliveryTime: 16,
-            slaString: '16 MINS',
-            lastMileTravel: 1.399999976158142,
-            slugs: {
-                restaurant: 'meghana-foods-5th-block-koramangala',
-                city: 'bangalore',
+            "avgRating": 4.3,
+            "parentId": "166",
+            "avgRatingString": "4.3",
+            "totalRatingsString": "10K+",
+            "sla": {
+                "deliveryTime": 43,
+                "lastMileTravel": 4.6,
+                "serviceability": "SERVICEABLE",
+                "slaString": "40-45 mins",
+                "lastMileTravelString": "4.6 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "availability": {
+                "nextCloseTime": "2024-02-01 03:00:00",
+                "opened": true
+            },
+            "badges": {},
+            "isOpen": true,
+            "type": "F",
+            "badgesV2": {
+                "entityBadges": {
+                    "imageBased": {},
+                    "textBased": {},
+                    "textExtendedBadges": {}
+                }
+            },
+            "aggregatedDiscountInfoV3": {
+                "header": "ITEMS",
+                "subHeader": "AT ₹129"
             },
             cityState: '1',
             address:
@@ -242,35 +262,33 @@
     },
     {
         type: 'restaurant',
-        data: {
-            type: 'F',
-            id: '428',
-            name: 'Biryani Pot',
-            uuid: '6db20a8b-dd85-4148-b750-107169f7f826',
-            city: '1',
-            area: 'Btm Layout',
-            totalRatingsString: '10000+ ratings',
-            cloudinaryImageId: 'mdipoyzfzsa7n7igskht',
-            cuisines: ['North Indian', 'Biryani'],
-            tags: [],
-            costForTwo: 50000,
-            costForTwoString: '₹500 FOR TWO',
-            deliveryTime: 19,
-            minDeliveryTime: 19,
-            maxDeliveryTime: 19,
-            slaString: '19 MINS',
-            lastMileTravel: 1.899999976158142,
-            slugs: {
-                restaurant: 'biryani-pot-madiwala-junction-btm',
-                city: 'bangalore',
-            },
-            cityState: '1',
-            address: '14th  Cross, 4th link Road Maruthi Nagar Madiwala Bangalore 68',
-            locality: 'Maruti Nagar',
-            parentId: 21798,
-            unserviceable: false,
-            veg: false,
-            select: false,
+        data: {  "id": "332266",
+        "name": "Kwality Walls Ice Cream Shop",
+        "cloudinaryImageId": "zwesdklnfnulspppjwd0",
+        "locality": "vidhan sabha marg",
+        "areaName": "Hussainganj",
+        "costForTwo": "₹250 for two",
+        "cuisines": [
+            "Ice Cream"
+        ],
+        "avgRating": 4.6,
+        "veg": true,
+        "parentId": "582",
+        "avgRatingString": "4.6",
+        "totalRatingsString": "100+",
+        "sla": {
+            "deliveryTime": 38,
+            "lastMileTravel": 11.5,
+            "serviceability": "SERVICEABLE",
+            "slaString": "35-40 mins",
+            "lastMileTravelString": "11.5 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2024-02-01 01:01:00",
+            "opened": true
+        },
+          
             favorite: false,
             tradeCampaignHeaders: [],
             aggregatedDiscountInfo: {
@@ -1612,7 +1630,7 @@
             area: 'Jayanagar',
             totalRatingsString: '50+ ratings',
             cloudinaryImageId: 'tjw67zgzfehxgfo1vio2',
-            cuisines: [ 'South Indian'],
+            cuisines: ['South Indian'],
             tags: [],
             costForTwo: 25000,
             costForTwoString: '₹250 FOR TWO',
@@ -2018,5 +2036,9 @@
         subtype: 'basic',
     },
 ];
+
+
+
+
 
 export default resList;
