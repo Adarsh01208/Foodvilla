@@ -1,15 +1,45 @@
-.card {
-    transition: all 0.2s ease-in-out;
+body {
+  background-color: #fef2f2ea;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #dfddddea;
 }
 
-.card:hover  {
-    transform: scale(1.05);
+.card,
+.shimmer-container {
+  transition: all 0.2s ease-in-out;
+
+
 }
-.list-group-item:hover{
+
+.card:hover,
+.shimmer-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(33, 33, 33, .2);
+}
+
+.list-group-item:hover {
   color: orangered;
 
 }
+
 .list-group-item {
-font-size: small;
-font-family: sans-serif;
+  font-size: small;
+  font-family: sans-serif;
+}
+
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 180px;
+}
+
+.shimmer-card {
+  width: 320px;
+  height: 350px;
+  background-color: #dfddddea;
+  margin: 22px;
+
 }
