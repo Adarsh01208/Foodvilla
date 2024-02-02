@@ -20,36 +20,49 @@ const Body = () => {
     getRestaurants();
   }, []);
 
+ //useEffect to get the restaurant data from Swiggy API and update the state variable restaurants using async/await function
+  const getRestaurants = async () => {
+    const data = await fetch(SWIGGY_URL);
+    const json = await data.json();
+    console.log(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
-  async function getRestaurants() {
-    // handle the error using try... catch
-    try {
-      const response = await fetch(SWIGGY_URL);
-      const json = await response.json();
+    // setRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    // setFilteredResList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setRestaurants(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
+    setFilteredResList(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
+    
+  };
 
-      // initialize checkJsonData() function to check Swiggy Restaurant data
-      async function checkJsonData(jsonData) {
-        for (let i = 0; i < jsonData?.data?.cards.length; i++) {
+  //using try... catch to handle the error
+  // async function getRestaurants() {
+  //   // handle the error using try... catch
+  //   try {
+  //     const response = await fetch(SWIGGY_URL);
+  //     const json = await response.json();
 
-          // initialize checkData for Swiggy Restaurant data
-          let checkData = json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+  //     // initialize checkJsonData() function to check Swiggy Restaurant data
+  //     async function checkJsonData(jsonData) {
+  //       for (let i = 0; i < jsonData?.data?.cards.length; i++) {
 
-          // if checkData is not undefined then return it
-          if (checkData !== undefined) {
-            return checkData;
-          }
-        }
-      }
-      // call the checkJsonData() function which return Swiggy Restaurant data
-      const resData = await checkJsonData(json);
-      console.log(resData);
-      // update the state variable restaurants with Swiggy API data
-      setRestaurants(resData);
-      setFilteredResList(resData);
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  //         // initialize checkData for Swiggy Restaurant data
+  //         let checkData = json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+
+  //         // if checkData is not undefined then return it
+  //         if (checkData !== undefined) {
+  //           return checkData;
+  //         }
+  //       }
+  //     }
+  //     // call the checkJsonData() function which return Swiggy Restaurant data
+  //     const resData = await checkJsonData(json);
+  //     console.log(resData);
+  //     // update the state variable restaurants with Swiggy API data
+  //     setRestaurants(resData);
+  //     setFilteredResList(resData);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 
   return restaurants.length === 0 ? (<Shimmer />) : (
     <div className="container " >
