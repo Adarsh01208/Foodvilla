@@ -46,7 +46,6 @@ const Body = () => {
       // update the state variable restaurants with Swiggy API data
       setRestaurants(resData);
       setFilteredResList(resData);
-
     } catch (error) {
       console.log(error);
     }
@@ -58,9 +57,9 @@ const Body = () => {
         <input type="text" placeholder='Search Items' className='form-control w-50 border border-2 shadow-sm rounded-2  m-auto' onChange={event => setSearchTerm(event.target.value)} />
       </div>
       <div className="col-md-2 d-flex justify-content-center mt-5 " >
-        <button className="btn rounded-4 border shadow-sm mx-2 p-2 "  onClick={() => setFilteredResList(restaurants)}   >All</button>
+        <button className="btn rounded-4 border shadow-sm mx-2 p-2 "  onClick={() => setFilteredResList(restaurants)}>All</button>
         <button className="btn rounded-4 border shadow-sm mx-2 p-2" onClick={() => {
-          const topRatedList = filteredResList.filter((res) => res.info.avgRating > 4.3);
+          const topRatedList = restaurants.filter((res) => res.info.avgRating > 4.6);
           console.log(topRatedList);
           setFilteredResList(topRatedList);
         }} >Top Rated</button>
