@@ -10,37 +10,50 @@ import Login from "./components/Login"
 import Error from "./components/Error";
 
 
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import ResturantMenu from "./components/ResturantMenu";
 
 const AppLayout = () => {
     return (
         <div>
             <Header />
-            <Body />
+             <Outlet/>
             <Footer />
         </div>
     );
 }
- 
+
 const AppRouter = createBrowserRouter([
     {
         path: "/",
-        element: <AppLayout/>,
-        errorElement:<Error/>
-        
-    },
-    {
-        path: "/about",
-        element: <About/>
-    },
-    {
-        path: "/contact",
-        element: <ContactUs/>
-    },
-    {
-        path: "/login",
-        element: <Login/>
+        element: <AppLayout />,
+        errorElement: <Error />,
+        children: [
+            {
+                path: "/",
+                element: <Body />
+            },
+            {
+                path: "/about",
+                element: <About />
+            },
+            {
+                path: "/contact",
+                element: <ContactUs />
+            },
+            {
+                path: "/login",
+                element: <Login />
+            },
+            {
+                 path: "/resturants/:resId",
+                 element : <ResturantMenu/>
+            }
+            
+        ],
+        errorElement: <Error />
     }
+
 ]);
 
 

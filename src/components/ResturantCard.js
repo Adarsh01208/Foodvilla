@@ -12,11 +12,11 @@ const ResturantCard = (props) => {
 
     return (
         <div className="col-md-4">
-            <div className="card m-4 rounded-5 border-0 ">
+            <div className="card   m-4  rounded-5 border-0 homecard ">
                <div className="card-heading">
                <img className="rounded-5 " height={200} width={324} src={CDN_URL + cloudinaryImageId} alt="" />
                </div>
-                <div className="card-body rounded-5 border-0">
+                <div className="card-body rounded-5 border-0 ">
                     <div className="text-dark fw-semibold">
                         {name}
                     </div>
@@ -30,8 +30,8 @@ const ResturantCard = (props) => {
                     <div className="fw-light">
                         <i className="fa-solid fa-user "> </i> {costForTwo}
                     </div>
-                    <div className="fw-light">
-                        <i class="fa-solid fa-location-dot"></i> {areaName}
+                    <div className="fw-light ">
+                        <i class="fa-solid fa-location-dot "></i> {areaName}
                     </div>
                 </div>
             </div>

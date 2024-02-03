@@ -22,6 +22,7 @@ body {
 
 .list-group-item:hover {
   color: orangered;
+  text-decoration: none;
 
 }
 
@@ -43,3 +44,12 @@ body {
   margin: 22px;
 
 }
+.homecard {
+  width: 320px;
+  height: 350px;
+  background-color: #dfddddea;
+  margin: 22px;
+}
+
+
+

@@ -3,12 +3,16 @@ import resList from "../utils/mockData";
 import { SWIGGY_URL } from "../utils/constant";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+
 
 const Body = () => {
 
   const [searchTerm, setSearchTerm] = useState('');
   const [restaurants, setRestaurants] = useState([]);
   const [filteredResList, setFilteredResList] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
 
@@ -25,10 +29,10 @@ const Body = () => {
     const data = await fetch(SWIGGY_URL);
     const json = await data.json();
     console.log(json);
-    console.log(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
-    setRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setFilteredResList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setFilteredResList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     // setRestaurants(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
     // setFilteredResList(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
     
@@ -81,8 +85,10 @@ const Body = () => {
 
       <div className="d-flex flex-wrap">
         {filteredResList.map((restaurant) => (
-          <ResturantCard key={restaurant.info.id} resData={restaurant} />
+          // <ResturantCard key={restaurant?.info?.id} resData={restaurant} />
+        <Link className="text-decoration-none" to={"/resturants/" + restaurant?.info?.id}><ResturantCard key={restaurant?.info?.id} resData={restaurant} />  </Link>
           // <ResturantCard key={restaurant?.info?.id} {...restaurant?.info} />
+        //  <Navigate to={"/resturants/" + restaurant?.info?.id}><ResturantCard key={restaurant?.info?.id} resData={restaurant} />  </Navigate>
         ))}
       </div>
     </div>
