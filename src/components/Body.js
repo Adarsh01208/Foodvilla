@@ -20,20 +20,21 @@ const Body = () => {
     getRestaurants();
   }, []);
 
- //useEffect to get the restaurant data from Swiggy API and update the state variable restaurants using async/await function
+// useEffect to get the restaurant data from Swiggy API and update the state variable restaurants using async/await function
   const getRestaurants = async () => {
     const data = await fetch(SWIGGY_URL);
     const json = await data.json();
+    console.log(json);
     console.log(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
-    // setRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    // setFilteredResList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setRestaurants(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
-    setFilteredResList(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
+    setRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setFilteredResList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    // setRestaurants(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
+    // setFilteredResList(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
     
   };
 
-  //using try... catch to handle the error
+  // using try... catch to handle the error
   // async function getRestaurants() {
   //   // handle the error using try... catch
   //   try {
@@ -64,7 +65,7 @@ const Body = () => {
   //   }
   // }
 
-  return restaurants.length === 0 ? (<Shimmer />) : (
+  return restaurants?.length === 0 ? (<Shimmer />) : (
     <div className="container " >
       <div className="mt-5">
         <input type="text" placeholder='Search Items' className='form-control w-50 border border-2 shadow-sm rounded-2  m-auto' onChange={event => setSearchTerm(event.target.value)} />
