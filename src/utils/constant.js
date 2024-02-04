@@ -15,3 +15,5 @@ export const CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,
 
 
  //<img alt="Imarti (2 Pcs) + Rabdi (100 Gm)" class="styles_image__2njt4" width="1024" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/b96a466fba9ca564e804f039e074ecc7"></img>
+
+ export const ITEMS_IMG_ID = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/"

@@ -21,7 +21,7 @@ const ResturantCard = (props) => {
                         {name}
                     </div>
                     <div>
-                        <i className="fa-solid fa-star text-success fw-semibold"> </i> {avgRating} • {sla.deliveryTime} min
+                         {avgRating} • {sla.deliveryTime} min
                     </div>
                     <div className="fw-light">
                         {cuisines.join(', ')}

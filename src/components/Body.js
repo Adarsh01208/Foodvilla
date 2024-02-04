@@ -24,7 +24,7 @@ const Body = () => {
     getRestaurants();
   }, []);
 
-// useEffect to get the restaurant data from Swiggy API and update the state variable restaurants using async/await function
+  // useEffect to get the restaurant data from Swiggy API and update the state variable restaurants using async/await function
   const getRestaurants = async () => {
     const data = await fetch(SWIGGY_URL);
     const json = await data.json();
@@ -35,7 +35,7 @@ const Body = () => {
     setFilteredResList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     // setRestaurants(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
     // setFilteredResList(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
-    
+
   };
 
   // using try... catch to handle the error
@@ -75,7 +75,7 @@ const Body = () => {
         <input type="text" placeholder='Search Items' className='form-control w-50 border border-2 shadow-sm rounded-2  m-auto' onChange={event => setSearchTerm(event.target.value)} />
       </div>
       <div className="col-md-2 d-flex justify-content-center mt-5 " >
-        <button className="btn rounded-4 border shadow-sm mx-2 p-2 "  onClick={() => setFilteredResList(restaurants)}>All</button>
+        <button className="btn rounded-4 border shadow-sm mx-2 p-2 " onClick={() => setFilteredResList(restaurants)}>All</button>
         <button className="btn rounded-4 border shadow-sm mx-2 p-2" onClick={() => {
           const topRatedList = restaurants.filter((res) => res.info.avgRating > 4.6);
           console.log(topRatedList);
@@ -86,9 +86,7 @@ const Body = () => {
       <div className="d-flex flex-wrap">
         {filteredResList.map((restaurant) => (
           // <ResturantCard key={restaurant?.info?.id} resData={restaurant} />
-        <Link className="text-decoration-none" to={"/resturants/" + restaurant?.info?.id}><ResturantCard key={restaurant?.info?.id} resData={restaurant} />  </Link>
-          // <ResturantCard key={restaurant?.info?.id} {...restaurant?.info} />
-        //  <Navigate to={"/resturants/" + restaurant?.info?.id}><ResturantCard key={restaurant?.info?.id} resData={restaurant} />  </Navigate>
+          <Link className="text-decoration-none" to={"/resturants/" + restaurant?.info?.id}><ResturantCard key={restaurant?.info?.id} resData={restaurant} /></Link>
         ))}
       </div>
     </div>
