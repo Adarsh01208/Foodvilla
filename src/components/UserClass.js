@@ -24,11 +24,9 @@ class UserClass extends React.Component {
         this.setState({
             userInfo: json,
         });
-
         console.log(json);
-
     }
-
+    
     componentDidUpdate() {
         console.log(' Users Component Did Update');
     }
@@ -44,9 +42,9 @@ class UserClass extends React.Component {
                 <div className='row'>
                     <div className='col-md-4'>
                         <div className='card'>
-                            <div className='card-header'>
+                            <div className='card-header p-0'>
                                 <div>
-                                    <img className='img-fluid' src={avatar_url} alt={name} />
+                                    <img className='img-fluid p-0'  src={avatar_url} alt={name} />
                                 </div>
                             </div>
                             <div className='card-body'>

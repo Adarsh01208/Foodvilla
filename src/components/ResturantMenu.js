@@ -1,31 +1,21 @@
-import React, { useEffect, useState } from 'react'
-import { CDN_URL, MENU_URL } from '../utils/constant';
+import React from 'react'
+import { CDN_URL } from '../utils/constant';
 import Shimmer from './Shimmer';
 import { useParams } from 'react-router-dom';
 import { ITEMS_IMG_ID } from '../utils/constant';
+import useResturantMenu from '../utils/useResturantMenu';
 
 
 const ResturantMenu = () => {
 
     const { resId } = useParams();
     // console.log(resId)
-
-    const [resInfo, setResInfo] = useState(null);
-
-    useEffect(() => {
-        fetchMenu();
-    }, []);
-
-    const fetchMenu = async () => {
-        const data = await fetch(MENU_URL + resId)
-        const json = await data.json()
-        console.log(json);
-
-        setResInfo(json);
-    };
+    const resInfo = useResturantMenu(resId)
 
     if (resInfo === null) return <Shimmer />;
+     console.log(resInfo)
 
+     
     const { name,
         costForTwoMessage,
         areaName,
@@ -35,25 +25,9 @@ const ResturantMenu = () => {
         avgRating } = resInfo?.data?.cards[0]?.card?.card?.info;
 
     const { itemCards } = resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
-
     console.log(itemCards);
 
-
     return (
-        // <div>
-
-        //     <ul>
-        //         {
-        //             itemCards.map((items) => (
-        //                 <li key={items.card.info.id} >
-        //                     {items.card.info.name} - {" "}
-        //                     ₹{items.card.info.price / 100}
-        //                     <img className='img-fluid' height={300} width={200} src={ITEMS_IMG_ID + items.card.info.imageId} alt="" />
-        //                 </li>
-        //             ))
-        //         }
-        //     </ul>
-        // </div>
         <div className='container'>
             <div className='row'>
                 <div className='d-flex justify-content-center' >
