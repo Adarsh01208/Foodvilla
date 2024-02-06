@@ -8,14 +8,14 @@ body {
 }
 
 
-.shimmer-container {
+.shimmer-container , .homecard{
   transition: all 0.2s ease-in-out;
 
 
 }
 
 
-.shimmer-card:hover {
+.shimmer-card:hover , .homecard:hover {
   transform: scale(1.05);
   box-shadow: 0 0 15px rgba(33, 33, 33, .2);
 }
