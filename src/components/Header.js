@@ -1,11 +1,13 @@
 import { LOGO_URL } from "../utils/constant"
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
 
     const [loginBtn, setLoginBtn] = useState("Login");
 
+    const onlineStatus = useOnlineStatus();
     // console.log('header render');
 
     // * if no dependency array => useEffect is called on every component render of the component
@@ -25,6 +27,8 @@ const Header = () => {
             </div>
             <div className="nav-items d-flex align-items-center ">
                 <ul className="d-flex align-items-center  mx-5 ">
+
+                    <li className="px-3 list-group-item mx-3 fw-semibold ">  <Link className=" text-decoration-none text-dark" to="/about">OnlineStatus: {onlineStatus ? "✅": "🔴"  }</Link> </li>
                     <li className="px-3 list-group-item mx-3 fw-semibold ">  <Link className=" text-decoration-none text-dark" to="/about">AboutUs</Link> </li>
                     <li className="px-3 list-group-item mx-3 fw-semibold"><i class="fa-solid fa-group-arrows-rotate"></i> <Link className=" text-decoration-none text-dark" to="/">Home</Link> </li>
                     <li className="px-3  list-group-item mx-3 fw-semibold"> <i class="fa-regular fa-circle-question"></i> <Link className=" text-decoration-none text-dark" to="/contact">ContactUs</Link></li>

@@ -4,6 +4,7 @@ import { SWIGGY_URL } from "../utils/constant";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link, Navigate, useNavigate } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 
 const Body = () => {
@@ -29,10 +30,10 @@ const Body = () => {
     const data = await fetch(SWIGGY_URL);
     const json = await data.json();
     console.log(json);
-    console.log(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
-    setRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setFilteredResList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setFilteredResList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     // setRestaurants(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
     // setFilteredResList(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
 
@@ -68,6 +69,10 @@ const Body = () => {
   //     console.log(error);
   //   }
   // }
+
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus == false) return <h1>Look Like U Are Not Connected To the Internet</h1>
 
   return restaurants?.length === 0 ? (<Shimmer />) : (
     <div className="container " >
