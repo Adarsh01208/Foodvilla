@@ -5,15 +5,20 @@ import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import useFetchResturant from "../utils/useFetchResturant";
 
 
 const Body = () => {
-
+  const restaurantsList = useFetchResturant();
+  console.log(restaurantsList)
   const [searchTerm, setSearchTerm] = useState('');
   const [restaurants, setRestaurants] = useState([]);
   const [filteredResList, setFilteredResList] = useState([]);
 
-  const navigate = useNavigate();
+  useEffect(() => {
+    setRestaurants(restaurantsList);
+    setFilteredResList(restaurantsList);
+  }, [restaurantsList]);
 
   useEffect(() => {
 
@@ -21,23 +26,18 @@ const Body = () => {
       (restaurants.filter((res) => res.info.name.toLowerCase().includes(searchTerm.toLowerCase())));
   }, [searchTerm]);
 
-  useEffect(() => {
-    getRestaurants();
-  }, []);
+  // useEffect(() => {
+  //   getRestaurants();
+  // }, []);
 
   // useEffect to get the restaurant data from Swiggy API and update the state variable restaurants using async/await function
-  const getRestaurants = async () => {
-    const data = await fetch(SWIGGY_URL);
-    const json = await data.json();
-    console.log(json);
-    console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-
-    setRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setFilteredResList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    // setRestaurants(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
-    // setFilteredResList(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
-
-  };
+  // const getRestaurants = async () => {
+  //   const data = await fetch(SWIGGY_URL);
+  //   const json = await data.json();
+  //   // setRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+  //   // setFilteredResList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+   
+  // };
 
   // using try... catch to handle the error
   // async function getRestaurants() {
@@ -74,7 +74,7 @@ const Body = () => {
 
   if (onlineStatus == false) return <h1>Look Like U Are Not Connected To the Internet</h1>
 
-  return restaurants?.length === 0 ? (<Shimmer />) : (
+  return filteredResList?.length === 0 ? (<Shimmer />) : (
     <div className="container " >
       <div className="mt-5">
         <input type="text" placeholder='Search Items' className='form-control w-50 border border-2 shadow-sm rounded-2  m-auto' onChange={event => setSearchTerm(event.target.value)} />
@@ -82,8 +82,8 @@ const Body = () => {
       <div className="col-md-2 d-flex justify-content-center mt-5 " >
         <button className="btn rounded-4 border shadow-sm mx-2 p-2 " onClick={() => setFilteredResList(restaurants)}>All</button>
         <button className="btn rounded-4 border shadow-sm mx-2 p-2" onClick={() => {
-          const topRatedList = restaurants.filter((res) => res.info.avgRating > 4.6);
-          console.log(topRatedList);
+          const topRatedList = restaurants.filter((res) => res.info.avgRating > 4.3);
+          //  console.log(topRatedList);
           setFilteredResList(topRatedList);
         }} >Top Rated</button>
       </div>

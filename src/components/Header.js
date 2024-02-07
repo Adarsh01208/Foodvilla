@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
-
-    const [loginBtn, setLoginBtn] = useState("Login");
-
+    // const [loginBtn, setLoginBtn] = useState("Login");
     const onlineStatus = useOnlineStatus();
     // console.log('header render');
 
@@ -22,18 +20,18 @@ const Header = () => {
     //onClick={() => { loginBtn === "Login" ? setLoginBtn("Logout") : setLoginBtn('Login'); }}  > {loginBtn}
     return (
         <div className="container-fliud d-flex justify-content-between border shadow  " >
-            <div className="img-fluid m-2 ">
-                <img height={50} src={LOGO_URL} alt="logo_icon" />
+            <div className="img-fluid mx-5 p-2  ">
+                <img height={70} src={LOGO_URL} alt="logo_icon" />
             </div>
             <div className="nav-items d-flex align-items-center ">
                 <ul className="d-flex align-items-center  mx-5 ">
 
-                    <li className="px-3 list-group-item mx-3 fw-semibold ">  <Link className=" text-decoration-none text-dark" to="/about">OnlineStatus: {onlineStatus ? "✅": "🔴"  }</Link> </li>
-                    <li className="px-3 list-group-item mx-3 fw-semibold ">  <Link className=" text-decoration-none text-dark" to="/about">AboutUs</Link> </li>
-                    <li className="px-3 list-group-item mx-3 fw-semibold"><i class="fa-solid fa-group-arrows-rotate"></i> <Link className=" text-decoration-none text-dark" to="/">Home</Link> </li>
-                    <li className="px-3  list-group-item mx-3 fw-semibold"> <i class="fa-regular fa-circle-question"></i> <Link className=" text-decoration-none text-dark" to="/contact">ContactUs</Link></li>
-                    <li className="px-3 list-group-item mx-3 fw-semibold"> <i class="fa-solid fa-bag-shopping"></i>Cart</li>
-                    <li className="px-3 list-group-item mx-3 fw-semibold"> <i class="fa-regular fa-user"></i> <button className="btn btn-warning py-1"><Link className=" text-decoration-none" to="/login">Login</Link> </button> </li>
+                    <li className="px-2 list-group-item mx-3 fw-semibold ">  <Link className=" text-decoration-none text-dark" to="/about">OnlineStatus: {onlineStatus ? "✅": "🔴"  }</Link> </li>
+                    <li className="px-2 list-group-item mx-3 fw-semibold ">  <Link className=" text-decoration-none text-dark" to="/about">AboutUs</Link> </li>
+                    <li className="px-2 list-group-item mx-3 fw-semibold"><i class="fa-solid fa-group-arrows-rotate"></i> <Link className=" text-decoration-none text-dark" to="/">Home</Link> </li>
+                    <li className="px-2  list-group-item mx-3 fw-semibold"> <i class="fa-regular fa-circle-question"></i> <Link className=" text-decoration-none text-dark" to="/contact">ContactUs</Link></li>
+                    <li className="px-2 list-group-item mx-3 fw-semibold"> <i class="fa-solid fa-bag-shopping"></i>Cart</li>
+                    <li className="px-2 list-group-item mx-3 fw-semibold"> <i class="fa-regular fa-user"></i> <button className="btn btn-warning py-1"><Link className=" text-decoration-none" to="/login">Login</Link> </button> </li>
                 </ul>
             </div>
         </div>
