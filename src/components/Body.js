@@ -1,4 +1,4 @@
-import ResturantCard from "./ResturantCard";
+import ResturantCard ,{ withPromotedLabel} from "./ResturantCard";
 import resList from "../utils/mockData";
 import { SWIGGY_URL } from "../utils/constant";
 import { useState, useEffect } from "react";
@@ -10,10 +10,12 @@ import useFetchResturant from "../utils/useFetchResturant";
 
 const Body = () => {
   const restaurantsList = useFetchResturant();
-  console.log(restaurantsList)
+  //console.log(restaurantsList)
   const [searchTerm, setSearchTerm] = useState('');
   const [restaurants, setRestaurants] = useState([]);
   const [filteredResList, setFilteredResList] = useState([]);
+
+  const restaurantsWithPromotedLabel = withPromotedLabel(ResturantCard);
 
   useEffect(() => {
     setRestaurants(restaurantsList);
@@ -91,7 +93,11 @@ const Body = () => {
       <div className="d-flex flex-wrap">
         {filteredResList.map((restaurant) => (
           // <ResturantCard key={restaurant?.info?.id} resData={restaurant} />
-          <Link className="text-decoration-none" to={"/resturants/" + restaurant?.info?.id}><ResturantCard key={restaurant?.info?.id} resData={restaurant} /></Link>
+          <Link className="text-decoration-none" to={"/resturants/" + restaurant?.info?.id}><ResturantCard key={restaurant?.info?.id} resData={restaurant} />
+          {/* {
+            restaurant?.info?.isPromoted ? (restaurantsWithPromotedLabel({ resData: restaurant })) : (ResturantCard({ resData: restaurant }))
+          } */}
+          </Link>
         ))}
       </div>
     </div>

@@ -25,8 +25,8 @@ const Header = () => {
             </div>
             <div className="nav-items d-flex align-items-center ">
                 <ul className="d-flex align-items-center  mx-5 ">
-
-                    <li className="px-2 list-group-item mx-3 fw-semibold ">  <Link className=" text-decoration-none text-dark" to="/about">OnlineStatus: {onlineStatus ? "✅": "🔴"  }</Link> </li>
+                <li className="px-2 list-group-item mx-3 fw-semibold "> OnlineStatus: {onlineStatus ? "✅": "🔴"  } </li>
+                    <li className="px-2 list-group-item mx-3 fw-semibold ">  <Link className=" text-decoration-none text-dark" to="/grocery">Grocery</Link> </li>
                     <li className="px-2 list-group-item mx-3 fw-semibold ">  <Link className=" text-decoration-none text-dark" to="/about">AboutUs</Link> </li>
                     <li className="px-2 list-group-item mx-3 fw-semibold"><i class="fa-solid fa-group-arrows-rotate"></i> <Link className=" text-decoration-none text-dark" to="/">Home</Link> </li>
                     <li className="px-2  list-group-item mx-3 fw-semibold"> <i class="fa-regular fa-circle-question"></i> <Link className=" text-decoration-none text-dark" to="/contact">ContactUs</Link></li>

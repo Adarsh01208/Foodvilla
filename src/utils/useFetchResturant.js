@@ -7,7 +7,7 @@ const useFetchResturant = () => {
 
     useEffect(() => {
         fetchResturant();
-    },[restaurant])
+    },[])
 
     const fetchResturant = async () => {
         const data = await fetch(SWIGGY_URL)
@@ -15,7 +15,7 @@ const useFetchResturant = () => {
         //   setRestaurants(json);
         setRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         // console.log(json);
-        console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      //  console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
     return restaurant
 }
