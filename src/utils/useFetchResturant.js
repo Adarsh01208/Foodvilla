@@ -14,7 +14,7 @@ const useFetchResturant = () => {
         const json = await data.json();
         //   setRestaurants(json);
         setRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-        // console.log(json);
+         //console.log(json);
       //  console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
     return restaurant

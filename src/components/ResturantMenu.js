@@ -1,9 +1,10 @@
-import React from 'react'
+import React  from 'react'
 import { CDN_URL } from '../utils/constant';
 import Shimmer from './Shimmer';
 import { useParams } from 'react-router-dom';
 import { ITEMS_IMG_ID } from '../utils/constant';
 import useResturantMenu from '../utils/useResturantMenu';
+import ResturantCategory from './ResturantCategory';
 
 
 const ResturantMenu = () => {
@@ -11,9 +12,12 @@ const ResturantMenu = () => {
     const { resId } = useParams();
     // console.log(resId)
     const resInfo = useResturantMenu(resId)
+    //const [showIndex, setShowIndex] = useState(null)
 
     if (resInfo === null) return <Shimmer />;
     console.log(resInfo)
+
+
 
 
     const { name,
@@ -25,16 +29,16 @@ const ResturantMenu = () => {
         avgRating } = resInfo?.data?.cards[0]?.card?.card?.info;
 
     const { itemCards } = resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
-  //  console.log(itemCards);
-    
-    const itsmsCategories = resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c) => c.card?.["card"]?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory" );
+    //  console.log(itemCards);
 
-    console.log(itsmsCategories);
+    const itemsCategories = resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c) => c.card?.["card"]?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+
+    console.log(itemsCategories);
     return (
         <div className='container'>
             <div className='row'>
                 <div className='d-flex justify-content-center' >
-                    <div className='card w-75 mt-5 shadow-lg  '>
+                    <div className='card w-75 mt-5   '>
                         <div className='card-header '>
                             <div className='d-flex justify-content-between '>
                                 <div className='p-3' >
@@ -52,7 +56,7 @@ const ResturantMenu = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='card-body   '>
+                        {/* <div className='card-body   '>
                             <div className='' >
                                 {
                                     itemCards.map((items) => (
@@ -82,7 +86,19 @@ const ResturantMenu = () => {
                                 }
                             </div>
 
+                        </div> */}
+                        {/* showItems = {index === showIndex}
+                        setShowIndex={() => setShowIndex(index)} */}
+                        <div className='card-body'>
+                            {
+                                itemsCategories.map((category, index) => (
+                                    //control components
+                                    <ResturantCategory key={itemsCategories?.card?.card?.title} data={category?.card?.card}
+                                    />
+                                ))
+                            }
                         </div>
+
                     </div>
                 </div>
             </div>
