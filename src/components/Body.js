@@ -10,7 +10,6 @@ import useFetchResturant from "../utils/useFetchResturant";
 
 const Body = () => {
   const restaurantsList = useFetchResturant();
-  //console.log(restaurantsList)
   const [searchTerm, setSearchTerm] = useState('');
   const [restaurants, setRestaurants] = useState([]);
   const [filteredResList, setFilteredResList] = useState([]);
@@ -23,7 +22,6 @@ const Body = () => {
   }, [restaurantsList]);
 
   useEffect(() => {
-
     setFilteredResList
       (restaurants.filter((res) => res.info.name.toLowerCase().includes(searchTerm.toLowerCase())));
   }, [searchTerm]);

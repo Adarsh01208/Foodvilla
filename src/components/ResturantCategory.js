@@ -4,13 +4,11 @@ import RestaurantsItems from './RestaurantsItems'
 
 const ResturantCategory = ({ data }) => {
 
-
     const [ShowItems, setShowItems] = useState(true);
 
     const handleClick = () => {
-      setShowItems(!ShowItems)
+        setShowItems(!ShowItems);
     }
-
     // console.log(data.title)
     return (
         <div className='card m-2 p-3  border-0 shadow-lg '>
@@ -30,9 +28,8 @@ const ResturantCategory = ({ data }) => {
                     ShowItems && <RestaurantsItems items={data.itemCards} />
                 }
             </div>
-
         </div>
     )
 }
 
-export default ResturantCategory
+export default ResturantCategory;

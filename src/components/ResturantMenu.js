@@ -1,4 +1,4 @@
-import React  from 'react'
+import React from 'react'
 import { CDN_URL } from '../utils/constant';
 import Shimmer from './Shimmer';
 import { useParams } from 'react-router-dom';
@@ -17,23 +17,11 @@ const ResturantMenu = () => {
     if (resInfo === null) return <Shimmer />;
     console.log(resInfo)
 
-
-
-
-    const { name,
-        costForTwoMessage,
-        areaName,
-        cuisines,
-        cloudinaryImageId,
-        imageId,
-        avgRating } = resInfo?.data?.cards[0]?.card?.card?.info;
-
-    const { itemCards } = resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
-    //  console.log(itemCards);
+    const { name, costForTwoMessage, areaName, cuisines, cloudinaryImageId, avgRating } = resInfo?.data?.cards[0]?.card?.card?.info;
 
     const itemsCategories = resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c) => c.card?.["card"]?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
 
-    console.log(itemsCategories);
+   // console.log(itemsCategories);
     return (
         <div className='container'>
             <div className='row'>
@@ -98,13 +86,10 @@ const ResturantMenu = () => {
                                 ))
                             }
                         </div>
-
                     </div>
                 </div>
             </div>
-
         </div>
-
     )
 }
 
