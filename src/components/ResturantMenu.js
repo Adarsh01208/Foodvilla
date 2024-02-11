@@ -2,7 +2,6 @@ import React from 'react'
 import { CDN_URL } from '../utils/constant';
 import Shimmer from './Shimmer';
 import { useParams } from 'react-router-dom';
-import { ITEMS_IMG_ID } from '../utils/constant';
 import useResturantMenu from '../utils/useResturantMenu';
 import ResturantCategory from './ResturantCategory';
 
@@ -12,6 +11,7 @@ const ResturantMenu = () => {
     const { resId } = useParams();
     // console.log(resId)
     const resInfo = useResturantMenu(resId)
+    console.log(resInfo)
     //const [showIndex, setShowIndex] = useState(null)
 
     if (resInfo === null) return <Shimmer />;

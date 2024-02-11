@@ -85,9 +85,8 @@ const Body = () => {
           const topRatedList = restaurants.filter((res) => res.info.avgRating > 4.3);
           //  console.log(topRatedList);
           setFilteredResList(topRatedList);
-        }} >Top Rated</button>
+        }}>Top Rated</button>
       </div>
-
       <div className="d-flex flex-wrap">
         {filteredResList.map((restaurant) => (
           // <ResturantCard key={restaurant?.info?.id} resData={restaurant} />
