@@ -19,3 +19,5 @@ export const MENU_URL = "https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fd
 export const ITEMS_IMG_ID = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/"
 
 export const GITHUB_URL = "https://api.github.com/users/Adarsh01208"
+
+export const EMPTY_CART_IMG ="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0"

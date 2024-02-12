@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import RestaurantsItems from './RestaurantsItems'
-import { ITEMS_IMG_ID } from '../utils/constant'
-import { clearCart } from '../utils/cartSlice'
+import { EMPTY_CART_IMG, ITEMS_IMG_ID } from '../utils/constant'
+import { clearCart, updateQuantity } from '../utils/cartSlice'
 import { Link } from 'react-router-dom'
 
 const Cart = () => {
 
   const cartItems = useSelector((store) => store.cart.items)
-  console.log(cartItems)
+
 
   const dispatch = useDispatch();
   const handleDelete = () => {
@@ -25,23 +25,23 @@ const Cart = () => {
   };
 
 
+
   return (
     <div className='container my-5 d-flex justify-content-center'>
-      <div className=' w-75  '>
-        <div className=' ' >
-
+      <div className='w-75'>
+        <div>
           {
             cartItems.length > 0 && (<div className='d-flex justify-content-between'>  <h2>My Cart({cartItems.length})</h2><button className='btn btn-primary ' onClick={handleDelete}>Clear Cart</button></div>)
           }
-          <hr />
+          <hr/>
         </div>
-        <div className='my-4 ' >
+        <div className='my-4'>
           <div className=''>
             {
               cartItems.length === 0 && (
                 <div className='p-1'>
                   <div className='text-center '>
-                    <img height={300} width={300} src='https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0'></img>
+                    <img height={300} width={300} src={EMPTY_CART_IMG}></img>
                   </div>
                   <div className='text-center'>
                     <div className='fs-5 mt-2 fw-semibold'>Your cart is empty</div>
@@ -73,15 +73,18 @@ const Cart = () => {
                   <div className='position-relative ' >
                     <img className='img-fluid   rounded-3' height={100} width={106} src={ITEMS_IMG_ID + items.card.info.imageId} alt="" />
                   </div>
-                  <h1>Total: ₹{calculateCartValue()}</h1>
-
-
                 </div>
-
                 <hr className='my-4' />
-
               </div>
             ))
+          }
+          {
+            cartItems.length > 0 && (
+              <div className='d-flex justify-content-between'>
+                <div className='fw-semibold fs-5'>Total:</div>
+                <div className='fw-semibold fs-5'>₹{calculateCartValue().toFixed(2)}</div>
+              </div>
+            )
           }
         </div>
       </div>
@@ -89,4 +92,4 @@ const Cart = () => {
   )
 }
 
-export default Cart
+export default Cart;
