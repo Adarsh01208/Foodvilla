@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import RestaurantsItems from './RestaurantsItems'
 import { EMPTY_CART_IMG, ITEMS_IMG_ID } from '../utils/constant'
@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom'
 const Cart = () => {
 
   const cartItems = useSelector((store) => store.cart.items)
-
 
   const dispatch = useDispatch();
   const handleDelete = () => {
@@ -24,8 +23,6 @@ const Cart = () => {
     return total;
   };
 
-
-
   return (
     <div className='container my-5 d-flex justify-content-center'>
       <div className='w-75'>
@@ -33,7 +30,7 @@ const Cart = () => {
           {
             cartItems.length > 0 && (<div className='d-flex justify-content-between'>  <h2>My Cart({cartItems.length})</h2><button className='btn btn-primary ' onClick={handleDelete}>Clear Cart</button></div>)
           }
-          <hr/>
+          <hr />
         </div>
         <div className='my-4'>
           <div className=''>

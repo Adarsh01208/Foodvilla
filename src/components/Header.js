@@ -1,30 +1,14 @@
 import { LOGO_URL } from "../utils/constant"
 import { useContext, useState } from "react";
-
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
 
 const Header = () => {
-    // const [loginBtn, setLoginBtn] = useState("Login");
     const onlineStatus = useOnlineStatus();
-    const { loggedInUser } = useContext(UserContext);
-
+    const { loggedInUser } = useContext(UserContext)
     const cartItems = useSelector((store) => store.cart.items)
-  //  console.log(cartItems)
-    // console.log('header render');
-
-    // * if no dependency array => useEffect is called on every component render of the component
-    // * if the dependency array is empty => useEffect is called only on the initial render(just once) of the component
-    // * if the dependency array contains a dependency => useEffect is called everytime the value of the depencecy changes
-    // * Dependency: A depency can be a state variable (or) a function
-
-    // useEffect(() => {
-    //   console.log(`useEffect Called`);
-    // }, [btnNameReact]);
-
-    //onClick={() => { loginBtn === "Login" ? setLoginBtn("Logout") : setLoginBtn('Login'); }}  > {loginBtn}
     return (
         <div className="container-fliud d-flex justify-content-between border shadow  " >
             <div className="img-fluid mx-5 p-2  ">
