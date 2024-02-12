@@ -4,7 +4,7 @@ import RestaurantsItems from './RestaurantsItems'
 
 const ResturantCategory = ({ data }) => {
 
-    const [ShowItems, setShowItems] = useState(true);
+    const [ShowItems, setShowItems] = useState(false);
 
     const handleClick = () => {
         setShowItems(!ShowItems);
