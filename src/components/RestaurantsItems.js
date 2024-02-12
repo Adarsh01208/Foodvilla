@@ -1,7 +1,15 @@
 import React from 'react'
 import { ITEMS_IMG_ID } from '../utils/constant'
+import { useDispatch } from 'react-redux';
+import { addItem } from '../utils/cartSlice';
 
 const RestaurantsItems = ({items}) => {
+  const dispatch = useDispatch();
+  const handleAddItem = (items)=>{
+      dispatch(addItem(items));
+  };
+
+
   return (
     <div>
       {
@@ -20,7 +28,7 @@ const RestaurantsItems = ({items}) => {
               </div>
               <div className='position-relative ' >
                 <div className=' position-absolute  text-center  '>
-                  <button className='btn btn-success px-4 mx-3  bg-white text-success shadow-sm' style={{ marginTop: "72px", fontSize: "13px" }}>ADD</button>
+                  <button className='btn btn-success px-4 mx-3  bg-white text-success shadow-sm' style={{ marginTop: "72px", fontSize: "13px" }} onClick={()=> handleAddItem(items)} >ADD</button>
                 </div>
                 <img className='img-fluid   rounded-3' height={100} width={106} src={ITEMS_IMG_ID + items.card.info.imageId} alt="" />
               </div>

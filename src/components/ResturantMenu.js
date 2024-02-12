@@ -11,11 +11,11 @@ const ResturantMenu = () => {
     const { resId } = useParams();
     // console.log(resId)
     const resInfo = useResturantMenu(resId)
-    console.log(resInfo)
+   // console.log(resInfo)
     //const [showIndex, setShowIndex] = useState(null)
 
     if (resInfo === null) return <Shimmer />;
-    console.log(resInfo)
+ //   console.log(resInfo)
 
     const { name, costForTwoMessage, areaName, cuisines, cloudinaryImageId, avgRating } = resInfo?.data?.cards[0]?.card?.card?.info;
 
