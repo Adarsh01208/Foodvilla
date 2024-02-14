@@ -1,6 +1,6 @@
-# NamasteReact: Online Food Ordering Web Application
+# FoodVilla: Online Food Ordering Web Application
 
-NamasteReact is an online food ordering web application inspired by platforms like Swiggy. It aims to provide users with a seamless experience for discovering restaurants, exploring detailed menus, placing orders, and managing their cart.
+FoodVilla is an online food ordering web application inspired by platforms like Swiggy. It aims to provide users with a seamless experience for discovering restaurants, exploring detailed menus, placing orders, and managing their cart.
 
 ## Table of Contents
 
@@ -16,7 +16,7 @@ NamasteReact is an online food ordering web application inspired by platforms li
 
 ## 1. Introduction
 
-NamasteReact is designed to offer users a convenient way to order food online. With features like restaurant discovery, detailed menus, searching functionality, and a user-friendly cart system, we aim to provide an experience similar to popular food delivery platforms like Swiggy.
+FoodVilla is designed to offer users a convenient way to order food online. With features like restaurant discovery, detailed menus, searching functionality, and a user-friendly cart system, we aim to provide an experience similar to popular food delivery platforms like Swiggy.
 
 ## 2. Dependencies
 
@@ -39,11 +39,11 @@ Make sure you have the following dependencies installed before setting up Namast
 
 ## 4. Installation
 
-To install NamasteReact, follow these steps:
+To install FoodVilla, follow these steps:
 
 1. Clone the repository to your local machine.
    ```bash
-   git clone https://github.com/Adarsh01208/NamasteReact.git
+   git clone https://github.com/Adarsh01208/Foodvilla.git
    ```
 
 2. Install dependencies.
@@ -59,11 +59,11 @@ Start the application with the following command:
 npm start
 ```
 
-Visit `http://localhost:3000` in your web browser to access NamasteReact.
+Visit `http://localhost:3000` in your web browser to access Foodvilla.
 
 ## 6. Configuration
 
-NamasteReact uses a live API for fetching restaurant data. No additional configuration is required for basic setup.
+Foodvilla uses a live API for fetching restaurant data. No additional configuration is required for basic setup.
 
 ## 7. Code Snippets
 
@@ -71,11 +71,11 @@ Explore example code snippets in the [CodeSnippets.md](CodeSnippets.md) file for
 
 ## 8. Contributing
 
-Contributions are welcome! Please check [this repository](https://github.com/Adarsh01208/NamasteReact) for guidelines on how to contribute.
+Contributions are welcome! Please check [this repository](https://github.com/Adarsh01208/Foodvilla) for guidelines on how to contribute.
 
 ## 9. License
 
-NamasteReact is released under the MIT License. See the [LICENSE.md](LICENSE.md) file for details.
+Foodvilla is released under the MIT License. See the [LICENSE.md](LICENSE.md) file for details.
 
 ---
 
