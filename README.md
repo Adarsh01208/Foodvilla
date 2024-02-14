@@ -26,6 +26,7 @@ Make sure you have the following dependencies installed before setting up FoodVi
 - NPM
 - Parcel
 - Process
+- Redux-toolkit
 
 ## 3. Key Features
 
