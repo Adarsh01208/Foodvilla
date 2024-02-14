@@ -1,6 +1,6 @@
 # FoodVilla: Online Food Ordering Web Application
 
-FoodVilla is an online food ordering web application inspired by platforms like Swiggy. It aims to provide users with a seamless experience for discovering restaurants, exploring detailed menus, placing orders, and managing their cart.
+FoodVilla is an online food ordering web application inspired by platforms like Swiggy, designed to provide users with a seamless experience for discovering restaurants, exploring detailed menus, placing orders, and managing their cart.
 
 ## Table of Contents
 
@@ -16,18 +16,16 @@ FoodVilla is an online food ordering web application inspired by platforms like 
 
 ## 1. Introduction
 
-FoodVilla is designed to offer users a convenient way to order food online. With features like restaurant discovery, detailed menus, searching functionality, and a user-friendly cart system, we aim to provide an experience similar to popular food delivery platforms like Swiggy.
+FoodVilla aims to simplify the process of ordering food online by offering features such as restaurant discovery, detailed menus, search functionality, and a user-friendly cart system. It provides a convenient and enjoyable experience for users similar to popular food delivery platforms like Swiggy.
 
 ## 2. Dependencies
 
-Make sure you have the following dependencies installed before setting up NamasteReact:
+Make sure you have the following dependencies installed before setting up FoodVilla:
 
-- "@reduxjs/toolkit": "^2.1.0"
-- "bootstrap": "^5.3.2"
-- "react": "^18.2.0"
-- "react-dom": "^18.2.0"
-- "react-redux": "^9.1.0"
-- "react-router-dom": "^6.22.0"
+- React
+- NPM
+- Parcel
+- Process
 
 ## 3. Key Features
 
@@ -59,15 +57,15 @@ Start the application with the following command:
 npm start
 ```
 
-Visit `http://localhost:3000` in your web browser to access Foodvilla.
+Visit `http://localhost:3000` in your web browser to access FoodVilla.
 
 ## 6. Configuration
 
-Foodvilla uses a live API for fetching restaurant data. No additional configuration is required for basic setup.
+FoodVilla uses a live API for fetching restaurant data. No additional configuration is required for basic setup.
 
 ## 7. Code Snippets
 
-Explore example code snippets in the [CodeSnippets.md](CodeSnippets.md) file for common tasks.
+Explore example code snippets in the [CodeSnippets.md](CodeSnippets.md) file for common tasks, such as displaying restaurant lists and menus.
 
 ## 8. Contributing
 
@@ -75,7 +73,7 @@ Contributions are welcome! Please check [this repository](https://github.com/Ada
 
 ## 9. License
 
-Foodvilla is released under the MIT License. See the [LICENSE.md](LICENSE.md) file for details.
+FoodVilla is released under the MIT License. See the [LICENSE.md](LICENSE.md) file for details.
 
 ---
 
