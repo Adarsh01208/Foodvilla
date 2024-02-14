@@ -77,7 +77,7 @@ const Body = () => {
 
   return filteredResList?.length === 0 ? (<Shimmer />) : (
     <div className="container " >
-      <div className="mt-5">
+      <div className="mt-5 row">
         <input type="text" placeholder='Search Items' className='form-control w-50 border border-2 shadow-sm rounded-2  m-auto' onChange={event => setSearchTerm(event.target.value)} />
       </div>
       <div className="col-md-2 d-flex justify-content-center mt-5 " >
