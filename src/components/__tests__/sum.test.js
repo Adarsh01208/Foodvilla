@@ -3,5 +3,5 @@ test('Caluculate sum of two numbers', () => {
 
    const result =  sum(1,2);
    //assertion
-    expect(result).toBe(7);
+    expect(result).toBe(3);
 });

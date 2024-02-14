@@ -11,6 +11,7 @@ const ResturantMenu = () => {
     const { resId } = useParams();
     
     const resInfo = useResturantMenu(resId)
+    console.log(resInfo);
   
 
     if (resInfo === null) return <Shimmer />;
