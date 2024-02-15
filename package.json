@@ -1,7 +1,7 @@
 {
-  "name": "namastereact",
+  "name": "Foodvilla",
   "version": "1.0.0",
-  "description": "namaste react by adarsh",
+  "description": "Foodvilla by adarsh",
   "main": "app.js",
   "scripts": {
     "start": "parcel index.html",
