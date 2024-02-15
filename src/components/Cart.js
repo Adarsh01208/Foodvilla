@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import RestaurantsItems from './RestaurantsItems'
 import { EMPTY_CART_IMG, ITEMS_IMG_ID } from '../utils/constant'
@@ -6,22 +6,44 @@ import { clearCart, updateQuantity } from '../utils/cartSlice'
 import { Link } from 'react-router-dom'
 
 const Cart = () => {
-
+  
   const cartItems = useSelector((store) => store.cart.items)
 
   const dispatch = useDispatch();
   const handleDelete = () => {
     dispatch(clearCart())
   }
+  const [quantities, setQuantities] = useState(new Array(cartItems.length).fill(1));
   const calculateCartValue = () => {
     let total = 0;
     cartItems.forEach((item) => {
       const price = item.card.info.price / 100 || item.card.info.defaultPrice / 100;
-      const quantity = 1; // You mentioned default quantity as 1
-      total += price * quantity;
+      total += price * quantities[cartItems.indexOf(item)];
     });
     return total;
   };
+
+  const incrementQuantity = (index) => {
+    setQuantities(prevQuantities => {
+      const newQuantities = [...prevQuantities];
+      newQuantities[index]++;
+      return newQuantities;
+
+    });
+  };
+
+  const decrementQuantity = (index) => {
+    setQuantities(prevQuantities => {
+      const newQuantities = [...prevQuantities];
+      if (newQuantities[index] > 1) {
+        newQuantities[index]--;
+      }
+      return newQuantities;
+    });
+  };
+
+
+
 
   return (
     <div className='container my-5 d-flex justify-content-center'>
@@ -50,7 +72,7 @@ const Cart = () => {
             }
           </div>
           {
-            cartItems.map((items) => (
+            cartItems.map((items, index) => (
               <div className='my-2'  >
                 <div className='d-flex  justify-content-between align-items-center  ' key={items.card.info.id}>
                   <div className='w-50'>
@@ -59,10 +81,10 @@ const Cart = () => {
                       {items.card.info.description}
                     </div>
                   </div>
-                  <div className='border'>
-                    <i className='fa fa-minus m-2'></i>
-                    1
-                    <i className='fa fa-plus m-2'></i>
+                  <div className='border' style={{cursor:'pointer'}}>
+                    <i onClick={() => decrementQuantity(index)} className='fa fa-minus m-2'></i>
+                    <span className='m-2'>{quantities[index]}</span>
+                    <i onClick={() => incrementQuantity(index)} className='fa fa-plus m-2'></i>
                   </div>
                   <div className='fw-normal fs-6 '>
                     ₹{items.card.info.price / 100 || items.card.info.defaultPrice / 100}

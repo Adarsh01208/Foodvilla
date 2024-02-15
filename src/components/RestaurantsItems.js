@@ -3,15 +3,27 @@ import { ITEMS_IMG_ID } from '../utils/constant'
 import { useDispatch } from 'react-redux';
 import { addItem } from '../utils/cartSlice';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const RestaurantsItems = ({ items }) => {
-  
+
   const dispatch = useDispatch();
   const handleAddItem = (items) => {
     dispatch(addItem(items));
+    toast.success('Item added to cart', {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    })
   };
 
   return (
     <div>
+      <ToastContainer />
       {
         items.map((items) => (
           <div className='my-4'  >
