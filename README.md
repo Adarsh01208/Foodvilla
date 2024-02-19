@@ -77,20 +77,20 @@ FoodVilla uses a live API for fetching restaurant data. No additional configurat
 
 ### Selected Restaurant Menu:
 
-![](Previews/Screenshot%202024-02-19%20190053.png)
+![](previews/Screenshot%202024-02-19%20190053.png)
 
 
 ### Selected Category Items:
 
-![](Previews/Screenshot%202024-02-19%20190145.png)
+![](previews/Screenshot%202024-02-19%20190145.png)
 
 ### Add Items to Cart:
 
-![](Previews/Screenshot%202024-02-19%20190200.png)
+![](previews/Screenshot%202024-02-19%20190200.png)
 
 ### Cart Page:
 
-![](Previews/Screenshot%202024-02-19%20190215.png)
+![](previews/Screenshot%202024-02-19%20190215.png)
 
 
 ## 8. Contributing
