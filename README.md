@@ -66,7 +66,32 @@ FoodVilla uses a live API for fetching restaurant data. No additional configurat
 
 ## 7. Code Snippets
 
-Explore example code snippets in the [CodeSnippets.md](CodeSnippets.md) file for common tasks, such as displaying restaurant lists and menus.
+**Screenshots:**
+### Landing Page:
+
+![](previews/Screenshot%202024-02-19%20185833.png)
+
+### Search Bar:
+
+![](previews/Screenshot%202024-02-19%20190015.png)
+
+### Selected Restaurant Menu:
+
+![](Previews/Screenshot%202024-02-19%20190053.png)
+
+
+### Selected Category Items:
+
+![](Previews/Screenshot%202024-02-19%20190145.png)
+
+### Add Items to Cart:
+
+![](Previews/Screenshot%202024-02-19%20190200.png)
+
+### Cart Page:
+
+![](Previews/Screenshot%202024-02-19%20190215.png)
+
 
 ## 8. Contributing
 
