@@ -1,5 +1,4 @@
 import React from 'react';
-import { Component } from 'react';
 import { GITHUB_URL } from '../utils/constant';
 
 class UserClass extends React.Component {

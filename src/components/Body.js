@@ -1,11 +1,9 @@
 import ResturantCard ,{ withPromotedLabel} from "./ResturantCard";
-import resList from "../utils/mockData";
-import { SWIGGY_URL } from "../utils/constant";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
-import { Link, Navigate, useNavigate } from "react-router-dom";
-import useOnlineStatus from "../utils/useOnlineStatus";
-import useFetchResturant from "../utils/useFetchResturant";
+import { Link } from "react-router-dom";
+import useOnlineStatus from "../Hooks/useOnlineStatus";
+import useFetchResturant from "../Hooks/useFetchResturant";
 
 
 const Body = () => {
@@ -84,17 +82,13 @@ const Body = () => {
         <button className="btn rounded-4 border shadow-sm mx-2 p-2 " onClick={() => setFilteredResList(restaurants)}>All</button>
         <button className="btn rounded-4 border shadow-sm mx-2 p-2" onClick={() => {
           const topRatedList = restaurants.filter((res) => res.info.avgRating > 4.3);
-          //  console.log(topRatedList);
           setFilteredResList(topRatedList);
         }}>Top Rated</button>
       </div>
       <div className="d-flex flex-wrap">
         {filteredResList.map((restaurant) => (
-          // <ResturantCard key={restaurant?.info?.id} resData={restaurant} />
+        
           <Link className="text-decoration-none" to={"/resturants/" + restaurant?.info?.id}><ResturantCard key={restaurant?.info?.id} resData={restaurant} />
-          {/* {
-            restaurant?.info?.isPromoted ? (restaurantsWithPromotedLabel({ resData: restaurant })) : (ResturantCard({ resData: restaurant }))
-          } */}
           </Link>
         ))}
       </div>

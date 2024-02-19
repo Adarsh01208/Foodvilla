@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { SWIGGY_URL } from './constant';
+import { SWIGGY_URL } from '../utils/constant';
 
 const useFetchResturant = () => {
 

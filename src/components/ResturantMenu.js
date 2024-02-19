@@ -2,18 +2,14 @@ import React from 'react'
 import { CDN_URL } from '../utils/constant';
 import Shimmer from './Shimmer';
 import { useParams } from 'react-router-dom';
-import useResturantMenu from '../utils/useResturantMenu';
+import useResturantMenu from '../Hooks/useResturantMenu';
 import ResturantCategory from './ResturantCategory';
 
 
 const ResturantMenu = () => {
 
     const { resId } = useParams();
-    
-    const resInfo = useResturantMenu(resId)
-    console.log(resInfo);
-  
-
+    const resInfo = useResturantMenu(resId);
     if (resInfo === null) return <Shimmer />;
     const { name, costForTwoMessage, areaName, cuisines, cloudinaryImageId, avgRating } = resInfo?.data?.cards[0]?.card?.card?.info;
     const itemsCategories = resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c) => c.card?.["card"]?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");

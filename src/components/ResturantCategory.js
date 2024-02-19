@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import ResturantMenu from './ResturantMenu'
 import RestaurantsItems from './RestaurantsItems'
 
 const ResturantCategory = ({ data }) => {

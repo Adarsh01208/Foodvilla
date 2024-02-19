@@ -11,7 +11,7 @@ import Error from "./components/Error";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import ResturantMenu from "./components/ResturantMenu";
 import { Suspense, lazy } from 'react';
-import UserContext from "./utils/UserContext";
+import UserContext from "./Hooks/UserContext";
 import Cart from "./components/Cart";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
