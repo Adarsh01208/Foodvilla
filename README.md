@@ -69,11 +69,11 @@ FoodVilla uses a live API for fetching restaurant data. No additional configurat
 **Screenshots:**
 ### Landing Page:
 
-![](previews/Screenshot%202024-02-19%20185833.png)
+![](previews/LandingPage.png.png)
 
 ### Search Bar:
 
-![](previews/Screenshot%202024-02-19%20190015.png)
+![](previews/SearchBar.png.png)
 
 ### Selected Restaurant Menu:
 
